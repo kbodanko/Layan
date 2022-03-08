@@ -48,16 +48,18 @@ button {
   font-size: .9rem;
   letter-spacing: 2px;
   box-shadow: 0 0 2px #000013;
+  border: none;
   opacity: .8;
 }
 
 button:hover {
   opacity: 1;
   cursor: pointer;
+  transform: scale(1.1);
 }
 
 button:focus {
-  filter: scale(0.9);
+  transform: scale(0.9);
 }
 
 a {
@@ -132,6 +134,10 @@ h2 {
   z-index: 2;
   height: 1.5rem;
   cursor: pointer;
+}
+
+.icons:hover {
+  transform: scale(1.1);
 }
 
 .nav_social_icons .icons {
@@ -289,7 +295,7 @@ h2 {
 
 .button_wraper {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   margin-top: 2rem;
 }
 
