@@ -21,13 +21,16 @@ body{
     color: $navy_blue;
 }
 nav{
+    position: relative;
+    z-index: 3;
     display: flex;
     justify-content: space-between;
     padding: 1rem;
+    transition: .3s;
 }
-// main{
-//     height: 100%;
-// }
+main{
+    transition: .3s;
+}
 textarea {
     resize: none;
     font-family: 'Hubballi', cursive;
@@ -36,7 +39,6 @@ button{
     padding: .6rem 1.5rem;
     border-radius: 12px;
     background: $button_bg;
-    border: none;
     color: white;
     font-weight: 600;
     font-size: .9rem;
@@ -48,32 +50,59 @@ button:hover{
     opacity: 1;
     cursor: pointer;
 }
+button:focus{
+    filter: scale(.9);
+}
 a{
     color: white;
-    font-size: .8rem;
+    font-size: 1rem;
+}
+h2{
+    margin: 0;
+    // margin-left: 1.5rem;
+    font-size: 3rem;
+    font-variant: small-caps;
+    text-align: center;
 }
 
 .menu{
-    position: absolute;
-    z-index: 3;
+    transform: translateY(-100vh);
+    position: fixed;
+    z-index: 4;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 21, 0.9);
+    background-color: rgba(0, 0, 2, 0.9);
     color: white;
     font-size: 2rem;
+    transition: .3s;
+}
+.menu_close_wraper{
+    display: flex;
+    justify-content: end;
+    padding: 1rem;
+}
+#close{
+    height: 2.5rem;
 }
 .menu_option{
     margin: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+.menu_options_wraper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
 }
 .container{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     margin-top: -3.8rem;
     background-image: url('img/bg.png');
     background-size: cover;
@@ -171,13 +200,7 @@ a{
   border-left: 2px solid white;
   border-bottom: 2px solid white;
 }
-h2{
-    margin: 0;
-    // margin-left: 1.5rem;
-    font-size: 2rem;
-    font-variant: small-caps;
-    text-align: center;
-}
+
 
 .about_us_content_wraper{
     margin: 2rem 7rem;
@@ -196,10 +219,11 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 90vh;
     background-image: url(img/contact_bg.png);
     background-size: cover;
     background-position: center;
+    font-size: 1.2rem;
 }
 .contact_form{
     display: flex;
@@ -207,8 +231,12 @@ h2{
     align-items: center;
     justify-content: center;
     width: 40%;
-    height: 90%;
+    height: 80vh;
     color: white;
+    backdrop-filter: blur(2rem);
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 6px;
+    padding: 0 .5rem;
 }
 .form{
     display: flex;
@@ -239,11 +267,21 @@ h2{
     margin: 0;
     background-color: #000016;
     color: white;
-    font-size: .8rem;
+    font-size: 1rem;
     text-align: end;
     padding-right: .5rem;
 }
 
+// @media (max-width: 1500px){
+//     .contact_form{
+//         width: 45%;
+//     }
+// }
+// @media (max-width: 1300px){
+//     .contact_form{
+//         width: 50%;
+//     }
+// }
 @media (max-width: 1200px){
     .comp_build_container {
         width: 75%;
@@ -252,19 +290,22 @@ h2{
         margin: 0;
         margin-top: 2rem;
     }
+    // .contact_form{
+    //     width: 55%;
+    // }
 }
 @media (max-width: 1000px){
     .contact_form{
-        width: 45%;
+        width: 55%;
     }
 }
 @media (max-width: 900px){
     .comp_build_container {
         width: 80%;
     }
-    .contact_form{
-        width: 50%;
-    }
+    // .contact_form{
+    //     width: 80%;
+    // }
 }
 @media (max-width: 800px){
     .home {
@@ -285,8 +326,12 @@ h2{
     .content{
         font-size: 1rem;
     }
+    .contact{
+         background-image: url('img/contact_bg_mobil.png');
+        // padding: 5% 20%;
+    }
     .contact_form{
-        width: 60%;
+        width: 75%;
     }
 }
 @media (max-width: 700px){
@@ -302,21 +347,17 @@ h2{
     .about_us_content_wraper{
         margin-top: 0;
     }
-    .contact{
-        background-image: url('img/contact_bg_mobil.png');
-        padding: 5% 20%;
-    }
-    .contact_form{
-        width: 80%;
-    }
+    // .contact_form{
+    //     width: 80%;
+    // }
 }
 @media (max-width: 600px){
-    .contact{
-        padding: 5%;
-    }
-    .contact_form{
-        width: 62%;
-    }
+    // .contact{
+    //     padding: 5%;
+    // }
+    // .contact_form{
+    //     width: 62%;
+    // }
 }
 @media (max-width: 500px){
     .container{
@@ -353,9 +394,9 @@ h2{
     .about_us_content_wraper{
         padding: 0 1rem;
     }
-    .contact_form{
-        width: 70%;
-    }
+    // .contact_form{
+    //     width: 70%;
+    // }
     .button_wraper{
         margin: 1rem 0;
     }
@@ -363,15 +404,16 @@ h2{
         margin: .5rem;
         padding: .3rem .6rem;
         border-radius: 6px;
+        font-weight: 500;
     }
 }
 @media (max-width: 470px){
     .home_describe{
         margin: 5rem 0;    
     }
-    .contact_form{
-        width: 75%;
-    }
+    // .contact_form{
+    //     width: 75%;
+    // }
     .footer_p{
         font-size: .7rem;
     }
