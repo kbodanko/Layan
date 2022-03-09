@@ -27,7 +27,9 @@ let homeMenuOption = document.querySelector('#menuOption0');
 let compBuildOption = document.querySelector('#menuOption2');
 let aboutUsOption = document.querySelector('#menuOption3');
 let contactOption = document.querySelector('#menuOption4');
+let bottomarrow = document.querySelector('.bottom_arrow_img');
 
+bottomarrow.addEventListener('click', function () { compBuild.scrollIntoView({ behavior: "smooth" }); hideMenu(); });
 homeMenuOption.addEventListener('click', function () { home.scrollIntoView({ behavior: "smooth" }); hideMenu(); });
 compBuildOption.addEventListener('click', function () { compBuild.scrollIntoView({ behavior: "smooth" }); hideMenu(); });
 aboutUsOption.addEventListener('click', function () { aboutUs.scrollIntoView({ behavior: "smooth" }); hideMenu(); });
