@@ -1,3 +1,4 @@
+let rootElement = document.documentElement;
 let hamburger = document.querySelector('#hamburger');
 let close = document.querySelector('#close');
 let menu = document.querySelector('.menu');
@@ -8,6 +9,14 @@ let compBuild = document.querySelector('.comp_build');
 let aboutUs = document.querySelector('.about_us');
 let contact = document.querySelector('.contact');
 let menuOptions = document.querySelectorAll('.menu_option');
+let arrow = document.querySelector('.arrow');
+
+arrow.addEventListener('click', function () {
+    rootElement.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
 
 for (let i = 0; i < menuOptions.length; i++) {
     const element = menuOptions[i];

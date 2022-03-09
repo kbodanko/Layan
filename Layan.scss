@@ -1,6 +1,29 @@
 $navy_blue: rgb(0, 0, 22);
 $button_bg: linear-gradient(to right, #000013, #000654);
 
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #000016 #2f3442;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 20px;
+  }
+  *::-webkit-scrollbar {
+    width: 20px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #2f3442;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #000016;
+    border-radius: 10px;
+    border: 1px solid #000016;
+  }
 html{
     height: 100%;
 }
@@ -36,6 +59,8 @@ textarea {
     font-family: 'Hubballi', cursive;
 }
 button{
+    position: relative;
+    z-index: 5;
     padding: .6rem 1.5rem;
     border-radius: 12px;
     background: $button_bg;
@@ -89,6 +114,7 @@ h2{
     height: 2.5rem;
 }
 .menu_option{
+    width: 100%;
     margin: 1rem;
     cursor: pointer;
     text-align: center;
@@ -117,7 +143,7 @@ h2{
 }
 .icons{
     position: relative;
-    z-index: 2;
+    z-index: 5;
     height: 1.5rem;
     cursor: pointer;
 }
@@ -260,13 +286,33 @@ h2{
     background-color: transparent;
     border-radius: 2px;
     box-shadow: none;
-    border: 1px solid #ffffff8c;
+    border: 1px solid #ffffff42;
     color: white;
 }
 .button_wraper{
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
+}
+.to_top_arrow{
+    position: sticky;
+    z-index: 4;
+    bottom: 1rem;
+    right: .5rem;
+    width: 98%;
+    display: flex;
+    justify-content: end;
+    height: 6rem;
+    cursor: pointer;
+    padding-right: .7rem;
+    margin-top: -6rem;
+}
+.arrow{
+    opacity: .85;
+}
+.arrow:hover{
+    transform: scale(1.1);
+    opacity: 1;
 }
 .footer_p{
     margin: 0;
