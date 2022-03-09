@@ -336,13 +336,13 @@ h2 {
   width: 98%;
   display: flex;
   justify-content: end;
-  height: 6rem;
   cursor: pointer;
   padding-right: .7rem;
   margin-top: -6rem;
 }
 
 .arrow {
+  height: 6rem;
   opacity: .85;
 }
 
@@ -463,6 +463,10 @@ h2 {
     padding: .3rem .6rem;
     border-radius: 6px;
     font-weight: 500;
+  }
+  .arrow {
+    height: 4rem;
+    width: 4rem;
   }
 }
 
