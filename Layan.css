@@ -67,7 +67,8 @@ button:focus {
 
 a {
   color: white;
-  font-size: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
 }
 
 h2 {
